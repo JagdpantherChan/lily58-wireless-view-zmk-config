@@ -26,29 +26,11 @@
 &kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                                &kp Y   &kp U             &kp I              &kp O    &kp P     &kp BACKSLASH
 &kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                                &kp H   &kp J             &kp K              &kp L    &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &kp DELETE    &kp BACKSPACE  &kp N   &kp M             &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp LEFT_WIN  &kp LEFT_ALT  &mo 1   &kp SPACE     &kp RET        &tog 2  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                                  &kp LEFT_WIN  &kp LEFT_ALT  &mo 1   &kp SPACE     &kp RET        &mo 2   &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
         };
 
-        lower_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            label = "Lower";
-            bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans                    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans      &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans      &trans        &trans        &trans        &trans        &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans      &trans        &trans
-            >;
-        };
-
-        raise_layer {
+        low_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -56,13 +38,31 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
+            label = "Lower";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans        &trans     &kp MINUS  &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &kp UP_ARROW  &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans        &trans     &trans     &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
+            >;
+        };
+
+        raise_layer {
+            // ------------------------------------------------------------------------------------------------------------
+            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
+            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
+            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
+            //                     |      |      |      |        |  |       |      |       |       |
+
             label = "Raise";
             bindings = <
-&trans  &trans    &trans    &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL
-&trans  &trans    &kp UP    &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans     &trans
-&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans                    &trans  &trans  &trans  &trans  &trans     &trans
-&trans  &trans    &trans    &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans     &trans
-                            &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans                    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans      &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans      &trans        &trans        &trans        &trans        &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans      &trans        &trans
             >;
         };
     };
